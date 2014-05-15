@@ -1,0 +1,9 @@
+<?php
+
+$link = mysqli_connect('127.0.0.1', 'root', '123', 'practica8');
+//La condiciona que permite verificar que se logro conectar y envia el respectivo mensaje en cualquiera de los casos
+if (!$link) {
+    die('Error de Conexión (' . mysqli_connect_error() . ') '
+            . mysqli_connect_error());
+}
+?>

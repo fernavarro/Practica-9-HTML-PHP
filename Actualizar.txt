@@ -1,0 +1,37 @@
+<?php
+require("conexion.php");
+
+$id=$_POST["id"];
+$nombre=$_POST["nombre"];
+$clave=$_POST["clave"];
+$precio=$_POST["precio"];
+$descripcion=$_POST["descripcion"];
+?>
+
+<div style="background-color:White;color:blue">
+<h1><center>Producto Actualizado</center></h1>
+</div>
+
+<?php
+echo "<b>Id:</b>".$id;
+echo "<br>";
+echo "<b>Nombre:</b>".$nombre;
+echo "<br>";
+echo "<b>Clave:</b>".$clave;
+echo "<br>";
+echo "<b>Precio:</b>".$precio;
+echo "<br>";
+echo "<b>Descripcion:</b>".$descripcion;
+
+$actualizar = mysqli_query($link,"UPDATE producto SET nombre='$nombre',clave='$clave',precio='$precio',descripcion='$descripcion' WHERE id='$id'");
+
+if (!$actualizar){
+	echo "</br><h3>Error al guardar</h3></br>";
+}else{
+	echo "<h3>Actualizado !!</h3>";}
+
+	echo '<META HTTP-EQUIV="REFRESH" CONTENT="2;URL=indice.php">';
+
+	//Cerrar conexion a la BD
+mysqli_close($link);
+?>

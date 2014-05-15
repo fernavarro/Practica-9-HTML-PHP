@@ -1,0 +1,41 @@
+<?php
+
+require("conexion.php");
+?>
+
+<!DOCTYPE  html>
+<html lang='es'>
+<head>
+<title>Agregar Producto</title>
+<meta charset='iso-8859-1'/>
+</head>
+<body>
+<div style='background-color:White;color:blue'>
+<h1><center>Agregar Producto</center></h1>
+</div>
+
+<!-- Formulario  -->
+<form  action='guardar.php' method='POST'>
+<fieldset>
+<legend>Captura de Datos de Producto</legend>
+
+<label for='nombre'>Nombre</label><br>
+<input type='text' name='nombre' id='nombre' maxlenght='10' size='20'> <br>
+
+<label for='clave'>Clave</label></br>
+<input type="'text'" name="'clave'" id="'clave'"  maxlenght='10'><br><br>
+<label for='precio'>Precio</label></br>
+<input type='text' name='precio' id='precio' maxlenght='10' size='20'><br>
+
+<label for='descripción'>Decripci&oacute;n</label></br>
+
+<textarea style='resize: none' name='descripcion' id='descripcion' rows='15' cols='70'></textarea>
+
+</fieldset>
+<br>
+<input type='submit' value='Enviar' onclick='alert('Datos enviados!')'>
+<input type='reset' value='Borrar'> 
+<a href='indice.php' >Indice</a>
+</form>
+</body>
+</html>
